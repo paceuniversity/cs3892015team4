@@ -17,16 +17,18 @@
         android:textSize="40dp"
         android:textIsSelectable="false"
         android:textStyle="bold|italic"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:textColor="@android:color/black" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/MainLogo"
         android:src="@drawable/heroes"
-        android:layout_marginBottom="137dp"
+        android:layout_above="@+id/optionsButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="61dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,9 +36,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="PLAY"
         android:id="@+id/playButton"
+        android:layout_alignBottom="@+id/MainLogo"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="46dp"
-        android:layout_alignBottom="@+id/MainLogo" />
+        android:textColor="@android:color/black" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,9 +46,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Options"
         android:id="@+id/optionsButton"
-        android:layout_below="@+id/playButton"
+        android:layout_above="@+id/helpButton"
         android:layout_centerHorizontal="true"
-        android:layout_margin="7dp" />
+        android:layout_marginBottom="62dp"
+        android:textColor="@android:color/black" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,6 +58,7 @@
         android:text="How to Play"
         android:id="@+id/helpButton"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black" />
 
 </RelativeLayout>
