@@ -1,21 +1,35 @@
 package com.example.alex.mathleague;
 
+import android.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.app.Activity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.*;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
+    MediaPlayer player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+        player = MediaPlayer.create(MainActivity.this, R.raw.song);
+        player.setLooping(true);
+        player.setVolume(100,100);
+        player.start();
 
         TextView playB = (TextView) this.findViewById(R.id.playButton);
         TextView settingB = (TextView) this.findViewById(R.id.optionsButton);
@@ -49,7 +63,6 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -70,5 +83,15 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_HOME)) {
+            Toast.makeText(this, "You pressed the home button!", Toast.LENGTH_LONG).show();
+            player.pause();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
