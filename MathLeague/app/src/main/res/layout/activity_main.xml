@@ -24,11 +24,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/MainLogo"
-        android:src="@drawable/heroes"
+        android:src="@drawable/superheroes"
         android:layout_above="@+id/optionsButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="61dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,9 +35,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="PLAY"
         android:id="@+id/playButton"
-        android:layout_alignBottom="@+id/MainLogo"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/optionsButton"
         android:layout_centerHorizontal="true"
-        android:textColor="@android:color/black" />
+        android:layout_marginBottom="48dp" />
 
     <TextView
         android:layout_width="wrap_content"
