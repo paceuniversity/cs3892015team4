@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 
 public class AdditionGame extends Activity {
@@ -16,6 +17,10 @@ public class AdditionGame extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_addition_game);
+
+        ImageView dog1 = (ImageView) this.findViewById(R.id.dog1);
+        ImageView dog2 = (ImageView) this.findViewById(R.id.dog2);
+
     }
 
 
@@ -26,18 +31,4 @@ public class AdditionGame extends Activity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

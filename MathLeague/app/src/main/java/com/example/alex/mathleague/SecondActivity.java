@@ -2,6 +2,7 @@ package com.example.alex.mathleague;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 
 public class SecondActivity extends Activity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

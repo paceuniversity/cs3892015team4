@@ -10,4 +10,5 @@
     <string name="title_activity_subtraction_game">SubtractionGame</string>
     <string name="title_activity_shapes_game">ShapesGame</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_seek_bar">SeekBarActivity</string>
 </resources>
