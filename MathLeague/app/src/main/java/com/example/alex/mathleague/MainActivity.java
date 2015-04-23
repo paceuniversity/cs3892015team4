@@ -2,7 +2,9 @@ package com.example.alex.mathleague;
 
 import android.app.ActionBar;
 import android.app.ActivityManager;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
@@ -24,6 +26,7 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
+    final Context context = this;
     MediaPlayer player;
 
     @Override
@@ -89,6 +92,36 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed(){
+        AlertDialog.Builder messageBackButtonBuilder = new AlertDialog.Builder(context);
+        //set title
+        messageBackButtonBuilder.setTitle("Exit game");
+
+        //set dialog message
+        messageBackButtonBuilder.setMessage("Are you sure you want to exit the Math League?");
+        messageBackButtonBuilder.setCancelable(false);
+        messageBackButtonBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //if this button is click close current activity
+                MainActivity.this.finish();
+            }
+
+        });
+        messageBackButtonBuilder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+            public void onClick (DialogInterface dialog, int id) {
+                //if this button is click close dialog box
+                dialog.cancel();
+            }
+
+        });
+        //creates alert dialog
+        AlertDialog alertDialog = messageBackButtonBuilder.create();
+        //shows it
+        alertDialog.show();
+
     }
 
     int length = 0;
