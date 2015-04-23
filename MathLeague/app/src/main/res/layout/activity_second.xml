@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.alex.mathleague.SecondActivity"
+    android:background="@android:color/holo_blue_bright">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="GAMES LIST"
+        android:id="@+id/gamesList"
+        android:layout_centerHorizontal="true"
+        android:elegantTextHeight="false"
+        android:height="50dp"
+        android:textColor="#ffff0300"
+        android:textSize="50dp"
+        android:layout_alignParentTop="true"
+        android:textColorHighlight="#fffff41e" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/subtractionButton"
+        android:src="@drawable/subtractionbutton"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/gamesList"
+        android:layout_alignEnd="@+id/gamesList" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shapesButton"
+        android:layout_marginTop="77dp"
+        android:src="@drawable/shapesbutton"
+        android:layout_below="@+id/subtractionButton"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/additionButton"
+        android:layout_above="@+id/subtractionButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp"
+        android:src="@drawable/additionbutton" />
+
+</RelativeLayout>
