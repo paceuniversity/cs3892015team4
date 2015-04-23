@@ -5,7 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.alex.mathleague.SecondActivity"
-    android:background="@android:color/holo_blue_bright">
+    android:background="#ffffffff">
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,7 +19,9 @@
         android:textColor="#ffff0300"
         android:textSize="50dp"
         android:layout_alignParentTop="true"
-        android:textColorHighlight="#fffff41e" />
+        android:textColorHighlight="#fffff41e"
+        android:background="#fffffefa"
+        android:backgroundTint="#ffffffff" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -27,15 +29,14 @@
         android:id="@+id/subtractionButton"
         android:src="@drawable/subtractionbutton"
         android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/gamesList"
-        android:layout_alignEnd="@+id/gamesList" />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/shapesButton"
-        android:layout_marginTop="77dp"
         android:src="@drawable/shapesbutton"
+        android:layout_marginTop="80dp"
         android:layout_below="@+id/subtractionButton"
         android:layout_centerHorizontal="true" />
 
@@ -43,9 +44,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/additionButton"
-        android:layout_above="@+id/subtractionButton"
+        android:src="@drawable/additionbutton"
+        android:layout_below="@+id/gamesList"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="56dp"
-        android:src="@drawable/additionbutton" />
+        android:layout_marginTop="67dp" />
 
 </RelativeLayout>
