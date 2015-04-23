@@ -1,4 +1,5 @@
 package com.example.alex.mathleague;
+package com.example.androidfourthapp;
 
 import android.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -15,10 +16,15 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.*;
-
-
+import android.content.Context;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
 public class MainActivity extends Activity {
 
+    final Context context = this;
     MediaPlayer player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +70,36 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    public void onBackPressed(){
+        AlertDialog.Builder messageBackButtonBuilder = new AlertDialog.Builder(context);
+        //set title
+        messageBackButtonBuilder.setTitle("Exit game");
+
+        //set dialog message
+        messageBackButtonBuilder.setMessage("Are you sure you want to exit the Math League?");
+        messageBackButtonBuilder.setCancelable(false);
+        messageBackButtonBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //if this button is click close current activity
+                MainActivity.this.finish();
+            }
+
+        });
+        messageBackButtonBuilder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+            public void onClick (DialogInterface dialog, int id) {
+                //if this button is click close dialog box
+                dialog.cancel();
+            }
+
+        });
+        //creates alert dialog
+        AlertDialog alertDialog = messageBackButtonBuilder.create();
+        //shows it
+        alertDialog.show();
+
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -93,5 +129,19 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+}
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 }
