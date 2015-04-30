@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:adnroid="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.alex.mathleague.SubtractionGame"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/problem1"
+        android:text=" Using the pictures what's 4 - 1 = ?"
+        android:textColor="#378559"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_horizontal"
+        android:textSize="50dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mask1G"
+        android:src="@drawable/mask1"
+        android:layout_below="@+id/problem1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mask3G"
+        android:src="@drawable/mask1"
+        android:layout_below="@+id/mask1G"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mask2G"
+        android:src="@drawable/mask1"
+        android:layout_below="@+id/problem1"
+        android:layout_toRightOf="@+id/mask1G"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mask4G"
+        android:src="@drawable/mask1x"
+        android:layout_below="@+id/mask2G"
+       android:layout_toRightOf="@+id/mask3G"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+         />
+
+    <TextView
+        android:id="@+id/ans1"
+        android:text="3"
+        android:textColor="#569833"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30sp"
+        android:clickable="true"
+        android:layout_alignTop="@+id/ans2"
+        android:layout_toRightOf="@+id/ans4"
+        android:layout_toEndOf="@+id/ans4" />
+    <TextView
+        android:id="@+id/ans2"
+        android:text="0"
+        android:textColor="#556fff"
+        android:textSize="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:layout_below="@+id/mask3G"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/ans4"
+        android:text="4"
+        android:textColor="#4555ff"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40sp"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/mask1G"
+        android:layout_alignEnd="@+id/mask1G" />
+
+</RelativeLayout>
