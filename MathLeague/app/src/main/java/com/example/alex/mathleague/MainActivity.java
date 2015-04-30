@@ -27,7 +27,7 @@ import java.util.List;
 public class MainActivity extends Activity {
 
     final Context context = this;
-    MediaPlayer player;
+    static MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,7 +124,14 @@ public class MainActivity extends Activity {
 
     }
 
-    int length = 0;
+    static int length = 0;
+
+    @Override
+    protected void onUserLeaveHint(){
+        super.onUserLeaveHint();
+        player.pause();
+        length = player.getCurrentPosition();
+    }
 
     @Override
     protected void onResume(){
@@ -132,5 +139,6 @@ public class MainActivity extends Activity {
         player.seekTo(length);
         player.start();
     }
+
 
 }
