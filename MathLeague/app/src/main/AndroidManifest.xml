@@ -67,11 +67,13 @@
         </activity>
         <activity
             android:name=".AdditionResults"
-            android:label="@string/title_activity_addition_results" >
+            android:label="@string/title_activity_addition_results"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".AdditionGame2"
-            android:label="@string/title_activity_addition_game2" >
+            android:label="@string/title_activity_addition_game2"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 
