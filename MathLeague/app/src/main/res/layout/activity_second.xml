@@ -11,41 +11,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="GAMES LIST"
+        android:text="Choose A Game"
         android:id="@+id/gamesList"
         android:layout_centerHorizontal="true"
         android:elegantTextHeight="false"
         android:height="50dp"
         android:textColor="#ffff0300"
-        android:textSize="50dp"
+        android:textSize="45dp"
         android:layout_alignParentTop="true"
         android:textColorHighlight="#fffff41e" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/subtractionButton"
-        android:src="@drawable/subtractionbutton"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/gamesList"
-        android:layout_alignEnd="@+id/gamesList" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/shapesButton"
-        android:layout_marginTop="77dp"
-        android:src="@drawable/shapesbutton"
-        android:layout_below="@+id/subtractionButton"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/additionButton"
-        android:layout_above="@+id/subtractionButton"
+        android:src="@drawable/addherobutton"
+        android:layout_below="@+id/gamesList"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="56dp"
-        android:src="@drawable/additionbutton" />
+        android:layout_marginTop="61dp" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:id="@+id/shapesButton"
+        android:src="@drawable/shapeherobutton"
+        android:layout_below="@+id/additionButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:id="@+id/subtractionButton"
+        android:src="@drawable/subherobutton"
+        android:layout_alignTop="@+id/shapesButton"
+        android:layout_alignLeft="@+id/gamesList"
+        android:layout_alignStart="@+id/gamesList" />
 
 </RelativeLayout>
