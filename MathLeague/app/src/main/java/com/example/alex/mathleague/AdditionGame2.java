@@ -2,79 +2,63 @@ package com.example.alex.mathleague;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 
+public class AdditionGame2 extends Activity {
 
-
-public class SubtractionGame extends Activity {
-
-    public TextView ans1B, ans2B, ans3B, ans4B, hint;
-    public static int hintCount = 0, timesIncorrect = 0;
+    public static int timesIncorrect = 0, hintCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_addition_game2);
 
-        setContentView(R.layout.activity_subtraction_game);
+        TextView hint = (TextView) this.findViewById(R.id.hintbutton);
 
-        hint = (TextView) this.findViewById(R.id.hintButtonS);
-        ans1B = (TextView) this.findViewById(R.id.ans1);
-        ans2B = (TextView) this.findViewById(R.id.ans2);
-        ans3B = (TextView) this.findViewById(R.id.ans3);
-        ans4B = (TextView) this.findViewById(R.id.ans4);
+        TextView ans1 = (TextView) this.findViewById(R.id.ans1);
+        TextView ans2 = (TextView) this.findViewById(R.id.ans2);
+        TextView ans3 = (TextView) this.findViewById(R.id.ans3);
 
         hint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 hintCount++;
-                if (hintCount % 2 != 0)
-                    Toast.makeText(getApplicationContext(), "Subtract the mask with the X", Toast.LENGTH_SHORT).show();
+                if(hintCount % 2 != 0)
+                    Toast.makeText(getApplicationContext(), "Count the number of DOGS and CATS", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(getApplicationContext(), "Count the masks without the X", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Ignore the COWS", Toast.LENGTH_SHORT).show();
             }
         });
 
-
-        ans1B.setOnClickListener(new OnClickListener(){
-
+        ans1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT).show();
-                      Intent it = new Intent(getApplicationContext(), SubtractionGame2.class);
-                      startActivity(it);
-            }
-        });
-
-        ans2B.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Sorry, try again", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Incorrect", Toast.LENGTH_SHORT).show();
                 timesIncorrect++;
             }
         });
 
-        ans3B.setOnClickListener(new View.OnClickListener(){
-
+        ans2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Sorry, try again", Toast.LENGTH_SHORT).show();
-                timesIncorrect++;
+
+                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+                Intent it = new Intent(getApplicationContext(), AdditionResults.class);
+                startActivity(it);
             }
         });
 
-        ans4B.setOnClickListener(new View.OnClickListener() {
-
+        ans3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Sorry, try again", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Incorrect", Toast.LENGTH_SHORT).show();
                 timesIncorrect++;
             }
         });
@@ -84,7 +68,7 @@ public class SubtractionGame extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_subtraction_game, menu);
+        getMenuInflater().inflate(R.menu.menu_addition_game2, menu);
         return true;
     }
 
