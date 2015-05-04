@@ -57,7 +57,7 @@
         android:layout_height="300dp"
         android:id="@+id/imageView10"
         android:src="@drawable/addhero"
-        android:layout_below="@+id/title"
+        android:layout_alignTop="@+id/imageView11"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -66,7 +66,7 @@
         android:layout_height="300dp"
         android:id="@+id/imageView11"
         android:src="@drawable/subhero"
-        android:layout_above="@+id/playButton"
+        android:layout_below="@+id/title"
         android:layout_toRightOf="@+id/optionsButton"
         android:layout_toEndOf="@+id/optionsButton" />
 
@@ -75,7 +75,7 @@
         android:layout_height="300dp"
         android:id="@+id/imageView12"
         android:src="@drawable/shapehero"
-        android:layout_alignBottom="@+id/playButton"
+        android:layout_alignTop="@+id/imageView10"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

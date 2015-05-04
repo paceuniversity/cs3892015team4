@@ -2,30 +2,24 @@ package com.example.alex.mathleague;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-
-public class ShapesResults extends Activity {
-
+public class SubtractionResults extends Activity{
     int totalIncorrect = 0, totalAttempts = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shapes_results);
+        setContentView(R.layout.activity_subtraction_results);
 
-        totalIncorrect = ShapesGame.timesIncorrect + ShapesGame2.timesIncorrect;
+        totalIncorrect = SubtractionGame.timesIncorrect + SubtractionGame2.timesIncorrect;
         totalAttempts = totalIncorrect + 2;
 
-        TextView incorrect = (TextView) this.findViewById(R.id.textView12);
-        TextView attempts = (TextView) this.findViewById(R.id.textView13);
+        TextView incorrect = (TextView) this.findViewById(R.id.textView3);
+        TextView attempts = (TextView) this.findViewById(R.id.textView4);
         TextView bubble = (TextView) this.findViewById(R.id.textView5);
 
         Button backButton = (Button) this.findViewById(R.id.button);
@@ -41,8 +35,8 @@ public class ShapesResults extends Activity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ShapesGame.timesIncorrect = 0;
-                ShapesGame2.timesIncorrect = 0;
+                SubtractionGame.timesIncorrect = 0;
+                SubtractionGame2.timesIncorrect = 0;
                 Intent it = new Intent(getApplicationContext(), MainActivity.class);
                 MainActivity.player.stop();
                 startActivity(it);
@@ -50,11 +44,8 @@ public class ShapesResults extends Activity {
         });
 
 
-        ShapesGame.timesIncorrect = 0;
-        ShapesGame2.timesIncorrect = 0;
-
-
-
+        SubtractionGame.timesIncorrect = 0;
+        SubtractionGame2.timesIncorrect = 0;
     }
 
     static int length = 0;
@@ -74,4 +65,5 @@ public class ShapesResults extends Activity {
             MainActivity.player.start();
         }
     }
+
 }

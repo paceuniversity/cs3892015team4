@@ -48,20 +48,20 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/imageButton5"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="43dp"
+        android:src="@drawable/rectangle"
         android:layout_below="@+id/textView10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/rectangle" />
+        android:layout_alignLeft="@+id/textView10"
+        android:layout_alignStart="@+id/textView10" />
 
     <ImageButton
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/imageButton6"
         android:src="@drawable/octagon"
-        android:layout_alignTop="@+id/imageButton8"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/imageButton5"
+        android:layout_alignLeft="@+id/imageButton5"
+        android:layout_alignStart="@+id/imageButton5" />
 
     <ImageButton
         android:layout_width="150dp"
@@ -69,17 +69,17 @@
         android:id="@+id/imageButton7"
         android:src="@drawable/trapezoid"
         android:layout_alignTop="@+id/imageButton5"
-        android:layout_alignRight="@+id/textView10"
-        android:layout_alignEnd="@+id/textView10" />
+        android:layout_alignRight="@+id/HintButton3"
+        android:layout_alignEnd="@+id/HintButton3" />
 
     <ImageButton
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/imageButton8"
         android:src="@drawable/pentagon"
-        android:layout_alignTop="@+id/imageView18"
-        android:layout_alignRight="@+id/textView10"
-        android:layout_alignEnd="@+id/textView10" />
+        android:layout_alignTop="@+id/imageButton6"
+        android:layout_alignLeft="@+id/imageButton7"
+        android:layout_alignStart="@+id/imageButton7" />
 
     <ImageView
         android:layout_width="wrap_content"

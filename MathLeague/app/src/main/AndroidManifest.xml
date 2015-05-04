@@ -45,7 +45,8 @@
             android:name=".FourthActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_fourth"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+             >
         </activity>
         <activity
             android:name=".AdditionGame"
@@ -77,11 +78,23 @@
         </activity>
         <activity
             android:name=".ShapesGame2"
-            android:label="@string/title_activity_shapes_game2" >
+            android:label="@string/title_activity_shapes_game2"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".ShapesResults"
-            android:label="@string/title_activity_shapes_results" >
+            android:label="@string/title_activity_shapes_results"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".SubtractionGame2"
+            android:label="@string/title_activity_subtraction_game2"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".SubtractionResults"
+            android:label="@string/title_activity_subtraction_results"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

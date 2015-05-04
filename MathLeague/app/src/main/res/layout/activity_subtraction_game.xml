@@ -1,12 +1,156 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.alex.mathleague.SubtractionGame">
+    tools:context="com.example.alex.mathleague.SubtractionGame"
+    android:background="@android:color/holo_orange_light">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Question 1:"
+        android:id="@+id/Question1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hint"
+        android:id="@+id/hintButtonS"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColorHighlight="#fffdf7ff"
+        android:visibility="visible"
+        android:textSize="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/problem1"
+        android:text=" What is 4 masks - 1 mask = ?"
+        android:textColor="#378559"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_horizontal"
+        android:textSize="30dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="20dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="175dp"
+        android:id="@+id/imageView5"
+        android:src="@drawable/subhero"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:id="@+id/mask1G"
+        android:src="@drawable/mask1"
+        android:layout_below="@+id/problem1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="15dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:id="@+id/mask3G"
+        android:src="@drawable/mask1"
+        android:layout_below="@+id/mask1G"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="15dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/mask2G"
+        android:src="@drawable/mask1"
+        android:layout_below="@+id/problem1"
+        android:layout_toRightOf="@+id/mask1G"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/mask4G"
+        android:src="@drawable/mask1x"
+        android:layout_below="@+id/mask2G"
+        android:layout_toRightOf="@+id/mask3G"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
+
+    <TextView
+        android:id="@+id/ans1"
+        android:text="3"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5sp"
+        android:clickable="true"
+        android:layout_toRightOf="@+id/imageView5"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/black" />
+    <TextView
+        android:id="@+id/ans2"
+        android:text="0"
+        android:textSize="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30sp"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:layout_toRightOf="@+id/ans1"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/ans4"
+        android:text="4"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30sp"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/ans2"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/ans3"
+        android:text="2"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30sp"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/ans4"
+        android:textColor="@android:color/black" />
 
 </RelativeLayout>
