@@ -57,4 +57,23 @@ public class ThirdActivity extends Activity{
             e.printStackTrace();
         }
     }
+
+    static int length = 0;
+
+    @Override
+    protected void onUserLeaveHint(){
+        super.onUserLeaveHint();
+        MainActivity.player.pause();
+        length = MainActivity.player.getCurrentPosition();
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if(!MainActivity.player.isPlaying()) {
+            MainActivity.player.seekTo(length);
+            MainActivity.player.start();
+        }
+    }
+
 }
