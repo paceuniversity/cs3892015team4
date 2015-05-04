@@ -2,21 +2,23 @@ package com.example.alex.mathleague;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
+import android.view.View;
 import android.widget.Toast;
-
-
+import android.widget.*;
 
 
 public class SubtractionGame extends Activity {
 
-    public TextView ans1B, ans2B, ans3B, ans4B, hint;
-    public static int hintCount = 0, timesIncorrect = 0;
+    public TextView ans1B, ans2B, ans3B, ans4B;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,22 +26,11 @@ public class SubtractionGame extends Activity {
 
         setContentView(R.layout.activity_subtraction_game);
 
-        hint = (TextView) this.findViewById(R.id.hintButtonS);
         ans1B = (TextView) this.findViewById(R.id.ans1);
         ans2B = (TextView) this.findViewById(R.id.ans2);
-        ans3B = (TextView) this.findViewById(R.id.ans3);
+      //  ans3B = (TextView) this.findViewById(R.id.ans3);
         ans4B = (TextView) this.findViewById(R.id.ans4);
 
-        hint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hintCount++;
-                if (hintCount % 2 != 0)
-                    Toast.makeText(getApplicationContext(), "Subtract the mask with the X", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getApplicationContext(), "Count the masks without the X", Toast.LENGTH_SHORT).show();
-            }
-        });
 
 
         ans1B.setOnClickListener(new OnClickListener(){
@@ -47,35 +38,32 @@ public class SubtractionGame extends Activity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT).show();
-                      Intent it = new Intent(getApplicationContext(), SubtractionGame2.class);
-                      startActivity(it);
+         //       Intent it = new Intent(getApplicationContext(), ThirdActivity.class);
+         //       startActivity(it);
             }
         });
 
-        ans2B.setOnClickListener(new View.OnClickListener() {
+        ans2B.setOnClickListener(new OnClickListener(){
 
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Sorry, try again", Toast.LENGTH_SHORT).show();
-                timesIncorrect++;
             }
         });
 
-        ans3B.setOnClickListener(new View.OnClickListener(){
+    //    ans3B.setOnClickListener(new OnClickListener(){
+
+     //       @Override
+     //       public void onClick(View v) {
+     //           Toast.makeText(getApplicationContext(), "Sorry, try again", Toast.LENGTH_SHORT).show();
+     //       }
+     //   });
+
+        ans4B.setOnClickListener(new OnClickListener(){
 
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Sorry, try again", Toast.LENGTH_SHORT).show();
-                timesIncorrect++;
-            }
-        });
-
-        ans4B.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Sorry, try again", Toast.LENGTH_SHORT).show();
-                timesIncorrect++;
             }
         });
     }
@@ -101,23 +89,5 @@ public class SubtractionGame extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    static int length = 0;
-
-    @Override
-    protected void onUserLeaveHint(){
-        super.onUserLeaveHint();
-        MainActivity.player.pause();
-        length = MainActivity.player.getCurrentPosition();
-    }
-
-    @Override
-    protected void onResume(){
-        super.onResume();
-        if(!MainActivity.player.isPlaying()) {
-            MainActivity.player.seekTo(length);
-            MainActivity.player.start();
-        }
     }
 }

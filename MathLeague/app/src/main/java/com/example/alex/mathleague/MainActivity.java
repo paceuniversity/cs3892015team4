@@ -27,7 +27,7 @@ import java.util.List;
 public class MainActivity extends Activity {
 
     final Context context = this;
-    static MediaPlayer player;
+    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +37,8 @@ public class MainActivity extends Activity {
 
         player = MediaPlayer.create(MainActivity.this, R.raw.song);
         player.setLooping(true);
-        player.setVolume(100, 100);
+        player.setVolume(100,100);
         player.start();
-
 
         TextView playB = (TextView) this.findViewById(R.id.playButton);
         TextView settingB = (TextView) this.findViewById(R.id.optionsButton);
@@ -48,6 +47,7 @@ public class MainActivity extends Activity {
         playB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Show Game List", Toast.LENGTH_SHORT).show();
                 Intent it = new Intent(getApplicationContext(), SecondActivity.class);
                 startActivity(it);
             }
@@ -56,6 +56,7 @@ public class MainActivity extends Activity {
         settingB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Show Setting List", Toast.LENGTH_SHORT).show();
                 Intent it = new Intent(getApplicationContext(), ThirdActivity.class);
                 startActivity(it);
             }
@@ -64,10 +65,33 @@ public class MainActivity extends Activity {
         helpB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Show Help List", Toast.LENGTH_SHORT).show();
                 Intent it = new Intent(getApplicationContext(), FourthActivity.class);
                 startActivity(it);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -101,24 +125,15 @@ public class MainActivity extends Activity {
 
     }
 
-
-    static int length = 0;
-
-    @Override
-    protected void onUserLeaveHint(){
-        super.onUserLeaveHint();
-        player.pause();
-        length = player.getCurrentPosition();
-    }
+    int length = 0;
 
     @Override
     protected void onResume(){
         super.onResume();
-        if(!MainActivity.player.isPlaying()) {
-            player.seekTo(length);
-            player.start();
-        }
+        player.seekTo(length);
+        player.start();
     }
+
 
 
 }

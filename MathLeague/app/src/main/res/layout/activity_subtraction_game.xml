@@ -11,31 +11,8 @@
     android:background="@color/background">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Question 1:"
-        android:id="@+id/Question1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="#ff000000" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hint"
-        android:id="@+id/hintButtonS"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textColorHighlight="#fffdf7ff"
-        android:visibility="visible"
-        android:textSize="@dimen/activity_horizontal_margin" />
-
-    <TextView
         android:id="@+id/problem1"
-        android:text=" What is 4 masks - 1 mask = ?"
+        android:text=" Using the pictures what's 4 - 1 = ?"
         android:textColor="#378559"
         android:textStyle="bold"
         android:layout_width="wrap_content"
@@ -44,115 +21,90 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:gravity="center_horizontal"
-        android:textSize="30dp"
-        android:paddingTop="40dp"
+        android:textSize="50dp"
+        android:paddingTop="20dp"
         android:paddingBottom="20dp"/>
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="175dp"
-        android:id="@+id/imageView5"
-        android:src="@drawable/subhero"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        />
-
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/mask1G"
         android:src="@drawable/mask1"
         android:layout_below="@+id/problem1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:paddingLeft="15dp"/>
+        android:layout_alignParentStart="true" />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/mask3G"
         android:src="@drawable/mask1"
         android:layout_below="@+id/mask1G"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:paddingLeft="15dp"/>
+        android:layout_alignParentStart="true" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/mask2G"
         android:src="@drawable/mask1"
         android:layout_below="@+id/problem1"
         android:layout_toRightOf="@+id/mask1G"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"/>
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/mask4G"
         android:src="@drawable/mask1x"
         android:layout_below="@+id/mask2G"
-        android:layout_toRightOf="@+id/mask3G"
+       android:layout_toRightOf="@+id/mask3G"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        />
+         />
 
     <TextView
         android:id="@+id/ans1"
         android:text="3"
-        android:textColor="@color/ans1Color"
+        android:textColor="#569833"
         android:textSize="50dp"
         android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="5sp"
+        android:paddingLeft="30sp"
         android:clickable="true"
-        android:layout_toRightOf="@+id/imageView5"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignTop="@+id/ans2"
+        android:layout_toRightOf="@+id/ans4"
+        android:layout_toEndOf="@+id/ans4" />
     <TextView
         android:id="@+id/ans2"
         android:text="0"
-        android:textColor="@color/ans2Color"
+        android:textColor="#556fff"
         android:textSize="50dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="30sp"
         android:textStyle="bold"
         android:clickable="true"
-        android:layout_toRightOf="@+id/ans1"
-        android:layout_alignParentBottom="true"
-        />
+        android:layout_below="@+id/mask3G"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/ans4"
         android:text="4"
-        android:textColor="@color/ans4Color"
+        android:textColor="#4555ff"
         android:textSize="50dp"
         android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="30sp"
+        android:paddingLeft="40sp"
         android:clickable="true"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/ans2" />
-
-    <TextView
-        android:id="@+id/ans3"
-        android:text="2"
-        android:textColor="@color/ans3Color"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="30sp"
-        android:clickable="true"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/ans4"/>
+        android:layout_alignRight="@+id/mask1G"
+        android:layout_alignEnd="@+id/mask1G" />
 
 </RelativeLayout>

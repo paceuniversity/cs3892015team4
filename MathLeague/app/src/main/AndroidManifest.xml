@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.alex.mathleague" >
 
-    <uses-permission android:name="android.permission.GET_TASKS" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -66,34 +64,8 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".AdditionResults"
-            android:label="@string/title_activity_addition_results"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".AdditionGame2"
-            android:label="@string/title_activity_addition_game2"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".ShapesGame2"
-            android:label="@string/title_activity_shapes_game2" >
-        </activity>
-        <activity
-            android:name=".ShapesResults"
-            android:label="@string/title_activity_shapes_results" >
-        </activity>
-        <activity
-            android:name=".SubtractionGame2"
-            android:configChanges="orientation|keyboardHidden"
-            android:label="@string/title_activity_subtraction_game"
-            android:screenOrientation="portrait" >
-            </activity>
-        <activity
-            android:name=".SubtractionResults"
-            android:configChanges="orientation|keyboardHidden"
-            android:label="@string/title_activity_subtraction_game"
-            android:screenOrientation="portrait" >
+            android:name=".SeekBarActivity"
+            android:label="@string/title_activity_seek_bar" >
         </activity>
     </application>
 
