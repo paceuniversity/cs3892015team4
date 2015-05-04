@@ -15,4 +15,6 @@
     <string name="title_activity_addition_game2">AdditionGame2</string>
     <string name="title_activity_shapes_game2">ShapesGame2</string>
     <string name="title_activity_shapes_results">ShapesResults</string>
+    <string name="title_activity_subtraction_game2">SubtractionGame2</string>
+    <string name="title_activity_subtraction_results">SubtractionResults</string>
 </resources>

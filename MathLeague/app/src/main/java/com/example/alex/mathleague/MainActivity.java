@@ -82,7 +82,8 @@ public class MainActivity extends Activity {
         messageBackButtonBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 //if this button is click close current activity
-                MainActivity.this.finish();
+                player.stop();
+                finish();
             }
 
         });
@@ -117,6 +118,13 @@ public class MainActivity extends Activity {
             player.seekTo(length);
             player.start();
         }
+    }
+
+    @Override
+    protected void onDestroy(){
+        android.os.Process.killProcess(android.os.Process.myPid());
+        super.onDestroy();
+        System.exit(0);
     }
 
 

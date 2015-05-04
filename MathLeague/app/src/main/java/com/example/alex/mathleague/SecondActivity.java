@@ -35,6 +35,7 @@ public class SecondActivity extends Activity {
             public void onClick(View v) {
                 Intent it = new Intent(getApplicationContext(), AdditionGame.class);
                 startActivity(it);
+                finish();
             }
         });
 
@@ -43,6 +44,7 @@ public class SecondActivity extends Activity {
             public void onClick(View v) {
                 Intent it = new Intent(getApplicationContext(), SubtractionGame.class);
                 startActivity(it);
+                finish();
             }
         });
 
